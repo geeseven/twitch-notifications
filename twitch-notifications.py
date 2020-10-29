@@ -124,7 +124,7 @@ for x in (x for x in live_data if time_offset < twitchTime(live_data[x]["started
 # send notifications if new streams have started
 if new_streams:
     apobj = Apprise()
-    for notification in config_data["noticiations"]:
+    for notification in config_data["notifications"]:
         apobj.add(notification)
     message = buildMessage(new_streams)
     apobj.notify(title="Twitch", body=message)

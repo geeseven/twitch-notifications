@@ -11,7 +11,7 @@ oauth: 123ab
 offset: 6
 
 # https://github.com/caronc/apprise#supported-notifications
-noticiations:
+notifications:
   - 'dbus://'
   - 'discord://webhook_id/webhook_token'
   - 'kodi://user:password@hostname:port'
