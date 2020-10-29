@@ -5,7 +5,7 @@ This script uses the [Twitch API][0] to check for channels that recently went li
 ## Setup and useage
 
 - Download or clone this repository. 
-- Install the [apprise][1] and [requests][3] Python modules.
+- Install the [apprise][1] Python module.
 - Copy `config-example.yml` to `config.yml`
 - Edit `config.yml`
 - Test `twitch-notifications.py`
@@ -13,7 +13,7 @@ This script uses the [Twitch API][0] to check for channels that recently went li
 
 ## Troubleshooting
 
-To verify apprise syntax is correct use the `apprise` [cli application][4].  The service wiki page will give good examples, like [Discord][5].
+To verify apprise syntax is correct use the `apprise` [cli application][3].  The service wiki page will give good examples, like [Discord][4].
 
 Temporally increasing the offset value in `config.yml` to something like 600 can also be handy when troubleshooting.
 
@@ -21,6 +21,5 @@ Temporally increasing the offset value in `config.yml` to something like 600 can
 [0]: https://dev.twitch.tv/
 [1]: https://github.com/caronc/apprise
 [2]: https://github.com/caronc/apprise/wiki
-[3]: https://requests.readthedocs.io/en/master/
-[4]: https://github.com/caronc/apprise#command-line
-[5]: https://github.com/caronc/apprise/wiki/Notify_discord#example
+[3]: https://github.com/caronc/apprise#command-line
+[4]: https://github.com/caronc/apprise/wiki/Notify_discord#example
