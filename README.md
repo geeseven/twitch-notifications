@@ -2,7 +2,7 @@
 
 This script uses the [Twitch API][0] to check for channels that recently went live and send notifications to any services supported by [apprise][1].  Some examples include Discord, Slack and Twilio.  See the [apprise wiki][2] for a full list and configuration information.
 
-## Setup and useage
+## Setup and usage
 
 - Download or clone this repository. 
 - Install the [apprise][1] Python module.
