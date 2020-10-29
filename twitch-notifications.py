@@ -9,7 +9,7 @@ from requests import get
 from sys import exit
 from yaml import safe_load
 
-config_data = safe_load(open("config-example.yml"))
+config_data = safe_load(open("config.yml"))
 
 rewrite_twitch_category_ids = False
 twitch_category_id_file = "twitch_category_ids.json"
