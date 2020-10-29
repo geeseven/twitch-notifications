@@ -1,0 +1,23 @@
+---
+# Twitch developer credentials
+# https://dev.twitch.tv/docs/authentication#registration
+clientid: abc123
+# https://dev.twitch.tv/docs/authentication/getting-tokens-oauth#oauth-client-credentials-flow
+oauth: 123ab
+
+# offset should be set to how often the script is run in minutes
+# if you are missing notifications you might need to add one minute to
+# account for network or other delays
+offset: 6
+
+# https://github.com/caronc/apprise#supported-notifications
+noticiations:
+  - 'dbus://'
+  - 'discord://webhook_id/webhook_token'
+  - 'kodi://user:password@hostname:port'
+
+channels:
+  - Twitch
+  - twitchgaming
+  - twitchmusic
+  - TwitchPresents
