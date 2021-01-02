@@ -1,12 +1,13 @@
 #!/usr/bin/env python
 
-from apprise import Apprise
 from collections import namedtuple
 from datetime import datetime, timedelta
 from json import dump, load
 from os import path
-from requests import get
 from sys import exit
+
+from apprise import Apprise
+from requests import get
 from yaml import safe_load
 
 config_data = safe_load(open("config.yml"))
@@ -36,9 +37,11 @@ def categoryName(id):
         return twitch_category_ids[id]
     else:
         # https://dev.twitch.tv/docs/api/reference#get-games
+        params = {"id": id}
         r = get(
-            "{}games?id={}".format(api_url, str(id)),
+            "{}games".format(api_url),
             headers=headers,
+            params=params,
             timeout=(3.05, 27),
         )
         category_data = r.json()["data"]
@@ -61,14 +64,13 @@ def liveStreams(channels):
         print("ERROR: More than 100 channels currently not supported.")
         exit(1)
     # build string of channels to feed to api call
-    channel_list = ""
-    for channel in channels:
-        channel_list += "user_login={}&".format(channel)
+    params = {"user_login": channels}
     # make api call
     # https://dev.twitch.tv/docs/api/reference#get-streams
     r = get(
-        "{}streams?{}".format(api_url, channel_list),
+        "{}streams".format(api_url),
         headers=headers,
+        params=params,
         timeout=(3.05, 27),
     )
     if r.status_code != 200:
